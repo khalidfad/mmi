@@ -1,0 +1,18 @@
+const pages=[['index.html','Home'],['about.html','About'],['programs.html','What We Do'],['events.html','Events'],['contact.html','Contact']];
+const cur=location.pathname.split('/').pop()||'index.html';
+document.body.classList.toggle('hero-top',!!document.querySelector('.hero'));
+document.body.insertAdjacentHTML('afterbegin',`<header><div class="wrap nav"><a class="brand" href="index.html"><img src="assets/logo.jpg" alt="MMI logo"><span>Mboho Mkparawa Ibibio<small>LAGOS CHAPTER</small></span></a><nav><button class="burger" aria-label="Menu"><span></span><span></span><span></span></button><ul>${pages.map(p=>`<li><a href="${p[0]}" class="${p[0]===cur?'on':''}">${p[1]}</a></li>`).join('')}</ul></nav></div></header>`);
+document.body.insertAdjacentHTML('beforeend',`<footer><div class="wrap grid"><div><h4>Mboho Mkparawa Ibibio · Lagos</h4><p>Oneness for Service. A socio-cultural organisation of Ibibio young adults, founded in Calabar on 1st August 1987.</p><div class="stars"><i>★</i><i>★</i><i>★</i></div></div><div><h4>Pages</h4><ul>${pages.map(p=>`<li><a href="${p[0]}">${p[1]}</a></li>`).join('')}</ul></div><div><h4>Parent body</h4><ul><li><a href="https://www.mmiinternational.org" target="_blank" rel="noopener">MMI International</a></li><li>lagos@your-domain.org</li></ul></div></div><p class="copy">© ${new Date().getFullYear()} Mboho Mkparawa Ibibio, Lagos Chapter</p></footer><div class="toast" id="toast"></div>`);
+const hd=document.querySelector('header'),nv=document.querySelector('nav');
+const sc=()=>hd.classList.toggle('s',scrollY>40);sc();addEventListener('scroll',sc,{passive:true});
+document.querySelector('.burger').onclick=()=>nv.classList.toggle('open');
+requestAnimationFrame(()=>document.body.classList.add('ready'));
+addEventListener('pageshow',()=>document.body.classList.remove('leave'));
+document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a||a.target||!a.getAttribute('href')||a.getAttribute('href').startsWith('#')||a.origin!==location.origin)return;e.preventDefault();document.body.classList.add('leave');setTimeout(()=>location.href=a.href,280)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.n,s=el.dataset.s||'';let n=0;const st=()=>{n+=Math.ceil(t/50);if(n>=t)n=t;el.textContent=n+s;if(n<t)requestAnimationFrame(st)};st();co.unobserve(el)}),{threshold:.6});
+document.querySelectorAll('[data-n]').forEach(el=>co.observe(el));
+const lg=document.querySelector('.logo-big');
+if(lg)addEventListener('mousemove',e=>{const x=(e.clientX/innerWidth-.5)*16,y=(e.clientY/innerHeight-.5)*16;lg.style.transform=`rotateY(${x}deg) rotateX(${-y}deg)`});
+document.querySelectorAll('form').forEach(f=>f.onsubmit=e=>{e.preventDefault();const t=document.getElementById('toast');t.textContent='Thank you! We will be in touch soon.';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500);f.reset()});
