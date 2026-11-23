@@ -75,6 +75,6 @@ nav ul{position:fixed;inset:76px 4% auto;flex-direction:column;background:#fff;p
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.sl{transition:none}}
 .ci{list-style:none;padding:0;display:grid;gap:16px}.ci li{display:flex;gap:14px;align-items:flex-start}.ci svg{flex:none;color:var(--red);background:var(--cream);padding:10px;width:44px;height:44px;border-radius:50%;transition:.3s}.ci li:hover svg{background:var(--red);color:#fff}.ci span{padding-top:8px}
 
-.officer-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 35%;border-radius:4px;margin:0 0 20px;background:var(--cream)}.ofc h3{font-size:1.2rem;line-height:1.3;margin-top:6px}.ofc small{display:block}
+.officer-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 50%;border-radius:4px;margin:0 0 20px;background:var(--cream)}.ofc h3{font-size:1.2rem;line-height:1.3;margin-top:6px}.ofc small{display:block}
 
 .of-title{display:inline-block;color:var(--red);font-family:'Outfit',system-ui,sans-serif;font-size:.7em;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-right:.45em;vertical-align:middle}
