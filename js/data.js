@@ -11,5 +11,5 @@ current:[
 {office:'Auditor',title:'Akparawa',name:'Linus Edem',img:'assets/img/linus-passport.jpg'},
 {office:'Welfare Officer',title:'Akparawanwan',name:'Nancy Uwem Idaha',img:'assets/img/of-6-passport.jpg'},
 {office:'Woman Leader',title:'Akparawa',name:'Celestina Uki',img:'assets/img/celestina-passport.jpg'},
-{office:'Provost',title:'Akparawa',name:'Aniedi Noah'}],
+{office:'Provost',title:'Akparawa',name:'Aniedi Noah',img:'assets/img/aniedi-noah-passport.jpg'}],
 past:[]};
