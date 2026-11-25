@@ -82,3 +82,5 @@ nav ul{position:fixed;inset:76px 4% auto;flex-direction:column;background:#fff;p
 .event-list{display:grid;gap:18px}.event-list .card{margin:0}
 
 .social-links{display:flex;gap:12px;list-style:none;padding:0}.social-links a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;transition:transform .25s,background .25s}.social-links a:hover{background:var(--red);color:#fff;transform:translateY(-3px)}.social-links svg{width:20px;height:20px;fill:currentColor}
+
+.frame img.about-emblem{aspect-ratio:1;object-fit:contain;background:#fff}
